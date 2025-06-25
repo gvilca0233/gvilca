@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  /* Tamaño base consistente */
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main */
+main {
+  padding: 20px;
+  background-color: white;
+  max-width: 900px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+main figure {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+main img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+main figcaption {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+main h2 {
+  margin-top: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 24px;
+  color: #111;
+}
+
+main p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.redes-sociales {
+  text-align: center;
+}
+
+.redes-sociales ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 0;
+}
+
+.redes-sociales ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.redes-sociales ul li a[href*="facebook"] {
+  background-color: #3b5998;
+  border: 2px solid #3b5998;
+}
+
+.redes-sociales ul li a[href*="facebook"]:hover {
+  background-color: #2d4373;
+  border-color: #2d4373;
+}
+
+.redes-sociales ul li a[href*="twitter"] {
+  background-color: #1da1f2;
+  border: 2px solid #1da1f2;
+}
+
+.redes-sociales ul li a[href*="twitter"]:hover {
+  background-color: #0d95e8;
+  border-color: #0d95e8;
+}
+
+.redes-sociales ul li a[href*="instagram"] {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border: 2px solid transparent;
+}
+
+.redes-sociales ul li a[href*="instagram"]:hover {
+  filter: brightness(0.9);
+  border-color: transparent;
+}
+
+.cta {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: #fca311;
+  color: #111;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(252, 163, 17, 0.4);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #e29a06;
+  color: white;
+  box-shadow: 0 6px 12px rgba(226, 154, 6, 0.6);
+}
