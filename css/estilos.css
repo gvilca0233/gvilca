@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  /* Tamaño base consistente */
   font-family: Arial, sans-serif;
   color: #333;
   line-height: 1.6;
@@ -12,7 +11,6 @@ body {
   flex-direction: column;
 }
 
-/* Main */
 main {
   padding: 20px;
   background-color: white;
