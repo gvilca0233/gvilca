@@ -1,92 +1,276 @@
-/* Reset básico */
+/* Reset y base */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-header {
-    background-color: black;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 28px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-    text-align: center;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #fca311;
-}
-
+/* Contenedor principal */
 main {
-    background-color: white;
-    max-width: 800px;
-    width: 100%;
-    margin: 30px auto 40px auto;
-    padding: 30px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
 }
 
-h2 {
-    color: #fca311;
-    font-size: 26px;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    text-align: center;
+/* Artículos */
+article {
+  margin-bottom: 48px;
+  padding: 24px;
+  border-radius: 14px;
+  background: #fdfdfd;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+  font-family: 'Georgia', serif;
+  font-size: 26px;
+  color: #34495e;
+  border-left: 6px solid #ffb703;
+  padding-left: 14px;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
 }
 
 article p {
-    font-size: 18px;
-    color: #444;
-    margin-bottom: 20px;
-    text-align: justify;
+  font-size: 17px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 18px;
 }
 
-footer {
-    background-color: black;
-    color: white;
+/* Listas dentro de artículos */
+article ul {
+  margin-left: 22px;
+  list-style-type: disc;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Formularios en contacto */
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 24px;
+  background-color: #fff;
+  resize: vertical;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  border-color: #ffb703;
+  box-shadow: 0 0 0 3px rgba(255, 183, 3, 0.25);
+  outline: none;
+}
+
+form button {
+  background: linear-gradient(45deg, #fca311, #ffb703);
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(252, 163, 17, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover,
+form button:focus {
+  background: linear-gradient(45deg, #e6a600, #fca311);
+  box-shadow: 0 10px 26px rgba(230, 166, 0, 0.7);
+  transform: translateY(-3px);
+}
+
+/* Enlaces dentro de artículos */
+article a {
+  color: #ffb703;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+article a:hover,
+article a:focus {
+  color: #e6a600;
+}
+
+/* Aside especial */
+aside {
+  background: #fef9ec;
+  border-left: 6px solid #fca311;
+  padding: 20px 24px;
+  margin: 40px 0;
+  font-style: italic;
+  color: #555;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Botones simples para navegación interna */
+div.botonera {
+  text-align: center;
+  margin: 30px 0;
+}
+
+div.botonera a {
+  text-decoration: none;
+  background: linear-gradient(45deg, #fca311, #ffb703);
+  color: #111;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-right: 12px;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+div.botonera a:last-child {
+  margin-right: 0;
+}
+
+div.botonera a:hover,
+div.botonera a:focus {
+  background: linear-gradient(45deg, #e6a600, #fca311);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 20px 18px;
+    margin: 20px 12px;
+  }
+
+  article {
+    padding: 18px 16px;
+    margin-bottom: 36px;
+  }
+
+  article h2 {
+    font-size: 24px;
+    padding-left: 12px;
+    border-left-width: 5px;
+    margin-bottom: 16px;
+  }
+
+  article p,
+  article ul {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    font-size: 16px;
+    padding: 14px 16px;
+  }
+
+  form button {
+    font-size: 18px;
+    padding: 16px 28px;
+  }
+
+  div.botonera {
+    margin: 25px 0;
+  }
+
+  div.botonera a {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px 0;
+    font-size: 18px;
+    border-radius: 14px;
     text-align: center;
-    padding: 15px 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  aside {
+    margin: 30px 0;
+    padding: 18px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 18px 14px;
+    margin: 15px 10px;
+  }
+
+  article {
+    padding: 14px 12px;
+    margin-bottom: 28px;
+  }
+
+  article h2 {
+    font-size: 20px;
+    padding-left: 10px;
+    border-left-width: 4px;
+    margin-bottom: 14px;
+  }
+
+  article p,
+  article ul {
     font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  form button {
+    font-size: 16px;
+    padding: 14px 24px;
+  }
+
+  div.botonera a {
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  aside {
+    font-size: 14px;
+    padding: 16px 18px;
+    margin: 25px 0;
+  }
 }

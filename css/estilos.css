@@ -1,130 +1,317 @@
-body {
+/* Reset y base */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  color: #333;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #2c3e50;
   line-height: 1.6;
-  background-color: #f0f0f0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
+/* Contenedor principal */
 main {
-  padding: 20px;
-  background-color: white;
-  max-width: 900px;
-  margin: 0 auto;
-  flex: 1;
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 24px 28px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
-main figure {
-  margin: 0 0 20px 0;
-  text-align: center;
+/* Figure principal */
+figure {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 36px;
+  transition: box-shadow 0.35s ease;
+  cursor: pointer;
 }
 
-main img {
+figure:hover {
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+figure img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
   display: block;
-  margin: 0 auto 10px auto;
+  object-fit: cover;
+  height: auto;
+  transition: transform 0.45s ease;
+  border-radius: 16px;
 }
 
-main figcaption {
-  font-size: 14px;
-  color: #666;
-  margin-top: 8px;
-  font-style: italic;
+figure:hover img {
+  transform: scale(1.06);
 }
 
-main h2 {
-  margin-top: 0;
-  font-weight: bold;
-  letter-spacing: 1px;
+figcaption {
+  background: #ffb703;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 16px 24px;
+  text-align: center;
+  letter-spacing: 1.2px;
+  border-radius: 0 0 16px 16px;
+}
+
+/* Secciones */
+section {
+  margin-bottom: 42px;
+}
+
+/* Títulos secciones */
+section h3 {
+  font-family: 'Georgia', serif;
   font-size: 24px;
-  color: #111;
+  color: #34495e;
+  margin-bottom: 22px;
+  border-left: 6px solid #ffb703;
+  padding-left: 16px;
+  letter-spacing: 1.1px;
 }
 
-main p {
-  font-size: 18px;
-  margin-bottom: 30px;
+/* Trailer */
+section.trailer iframe {
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.11);
+  width: 100%;
+  height: 420px;
+  transition: box-shadow 0.3s ease;
 }
 
-.redes-sociales {
+section.trailer iframe:hover {
+  box-shadow: 0 14px 34px rgba(0,0,0,0.18);
+}
+
+/* Galería */
+section.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+section.galeria figure {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+section.galeria figure:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+}
+
+section.galeria img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  border-radius: 16px;
+}
+
+section.galeria figure:hover img {
+  transform: scale(1.08);
+}
+
+section.galeria figcaption {
+  background: #fff8dc;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #555;
   text-align: center;
+  font-weight: 600;
+  border-radius: 0 0 16px 16px;
 }
 
-.redes-sociales ul {
-  list-style: none;
-  padding: 0;
+/* Redes sociales */
+section.redes-sociales ul {
   display: flex;
-  gap: 15px;
   justify-content: center;
-  margin: 0;
+  gap: 28px;
+  list-style: none;
 }
 
-.redes-sociales ul li a {
-  text-decoration: none;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 6px;
-  color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+section.redes-sociales ul li a {
   display: inline-block;
+  font-weight: 700;
+  font-size: 17px;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  border: none;
+  transform-origin: center;
 }
 
-.redes-sociales ul li a[href*="facebook"] {
-  background-color: #3b5998;
-  border: 2px solid #3b5998;
+/* Facebook */
+section.redes-sociales ul li a.facebook {
+  background: linear-gradient(45deg, #1877f2, #0f52ba);
 }
 
-.redes-sociales ul li a[href*="facebook"]:hover {
-  background-color: #2d4373;
-  border-color: #2d4373;
+section.redes-sociales ul li a.facebook:hover,
+section.redes-sociales ul li a.facebook:focus {
+  background: linear-gradient(45deg, #0f52ba, #1877f2);
+  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.9);
+  outline: none;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.redes-sociales ul li a[href*="twitter"] {
-  background-color: #1da1f2;
-  border: 2px solid #1da1f2;
+/* Twitter */
+section.redes-sociales ul li a.twitter {
+  background: linear-gradient(45deg, #1da1f2, #0c85d0);
 }
 
-.redes-sociales ul li a[href*="twitter"]:hover {
-  background-color: #0d95e8;
-  border-color: #0d95e8;
+section.redes-sociales ul li a.twitter:hover,
+section.redes-sociales ul li a.twitter:focus {
+  background: linear-gradient(45deg, #0c85d0, #1da1f2);
+  box-shadow: 0 8px 20px rgba(29, 161, 242, 0.9);
+  outline: none;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.redes-sociales ul li a[href*="instagram"] {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  border: 2px solid transparent;
+/* Instagram */
+section.redes-sociales ul li a.instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
 }
 
-.redes-sociales ul li a[href*="instagram"]:hover {
-  filter: brightness(0.9);
-  border-color: transparent;
+section.redes-sociales ul li a.instagram:hover,
+section.redes-sociales ul li a.instagram:focus {
+  background: linear-gradient(45deg, #8134af, #dd2a7b, #f58529);
+  box-shadow: 0 8px 20px rgba(221, 42, 123, 0.9);
+  outline: none;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.cta {
+
+/* Botón CTA */
+section.cta {
   text-align: center;
-  margin: 30px 0;
+  margin-top: 52px;
 }
 
-.btn-cta {
+section.cta .btn-cta {
   display: inline-block;
-  background-color: #fca311;
-  color: #111;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 12px 30px;
-  border-radius: 8px;
+  background-color: #ffb703;
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 22px;
+  padding: 20px 48px;
+  border-radius: 26px;
   text-decoration: none;
-  box-shadow: 0 4px 8px rgba(252, 163, 17, 0.4);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 6px 18px rgba(255, 183, 3, 0.5);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.btn-cta:hover {
-  background-color: #e29a06;
-  color: white;
-  box-shadow: 0 6px 12px rgba(226, 154, 6, 0.6);
+section.cta .btn-cta:hover,
+section.cta .btn-cta:focus {
+  background-color: #e6a600;
+  box-shadow: 0 10px 26px rgba(230, 166, 0, 0.7);
+  transform: translateY(-3px);
+  cursor: pointer;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    margin: 15px 12px;
+    padding: 24px 20px;
+  }
+
+  /* Trailer en 1 columna */
+  section.trailer iframe {
+    width: 100%;
+    height: 280px;
+  }
+
+  /* Galería en 1 columna */
+  section.galeria {
+    display: grid;
+    grid-template-columns: 1fr; /* UNA sola columna */
+    gap: 24px;
+  }
+
+  section.galeria img {
+    height: 220px; /* imágenes grandes para buen toque */
+  }
+
+  /* Redes sociales apilados en columna */
+  section.redes-sociales ul {
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 10px;
+    align-items: center;
+  }
+
+  section.redes-sociales ul li a {
+    width: 80%; /* botones anchos para toque cómodo */
+    font-size: 18px;
+    padding: 16px 0;
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  /* CTA botón ancho completo */
+  section.cta .btn-cta {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    padding: 18px 0;
+    margin: 0 auto;
+  }
+
+  /* Ajuste títulos para no quedar tan anchos */
+  section h3 {
+    font-size: 22px;
+    padding-left: 12px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    margin: 10px 8px;
+    padding: 20px 16px;
+  }
+
+  section.trailer iframe {
+    height: 200px;
+  }
+
+  section.galeria img {
+    height: 200px;
+  }
+
+  section.redes-sociales ul li a {
+    width: 90%;
+    font-size: 16px;
+    padding: 14px 0;
+  }
+
+  section.cta .btn-cta {
+    font-size: 18px;
+    padding: 16px 0;
+  }
+
+  section h3 {
+    font-size: 20px;
+    padding-left: 10px;
+  }
 }

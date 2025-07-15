@@ -1,77 +1,253 @@
+/* Reset y base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Contenedor principal */
 main {
-    flex-grow: 1;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 0;
-    box-shadow: none;
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
+/* Artículos */
 article {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
+  background: #fcf9f4; /* Fondo más cálido y suave */
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid #ffddb3; /* borde claro y cálido */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Títulos de artículos */
 article h2 {
-    font-family: 'Georgia', serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 10px;
-    border-left: 5px solid #ffae00;
-    padding-left: 12px;
+  font-family: 'Georgia', serif;
+  font-size: 26px;
+  color: #34495e;
+  border-left: 6px solid #ffb703;
+  padding-left: 14px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
 }
 
+/* Texto de artículos */
 article p {
-    font-size: 17px;
-    color: #444;
-    line-height: 1.7;
-    margin-bottom: 18px;
+  font-size: 17px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 18px;
 }
 
+/* Imágenes en artículos */
 article img {
-    width: 100%;
-    max-height: 280px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Lista de actores en reparto */
+main > article:last-child {
+  margin-bottom: 0;
+}
+
+/* Contenedor para todos los artículos de reparto con imagen lateral */
+main article {
+  display: flex;
+  flex-direction: column;
+}
+
+@media(min-width: 700px) {
+  main article {
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+  main article img {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-    display: block;
-    margin: 0 auto;
-    transition: transform 0.3s ease;
+    border-radius: 16px;
+  }
+  main article h2, main article p {
+    flex: 1;
+  }
 }
 
-article img:hover {
-    transform: scale(1.05);
+/* Enlaces dentro de artículos */
+article a {
+  color: #ffb703;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+article a:hover,
+article a:focus {
+  color: #e6a600;
+}
+
+/* Soundtrack audio - destacada */
 figure.soundtrack {
-    max-width: 400px;
-    margin: 40px auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    color: #555;
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
+  background: #fff8e1; /* tono suave, crema */
+  border: 2px solid #ffb703; /* borde dorado */
+  border-radius: 16px;
+  padding: 16px 20px 24px 20px;
+  box-shadow: 0 8px 26px rgba(255, 183, 3, 0.35);
+  transition: box-shadow 0.3s ease;
+}
+
+figure.soundtrack:hover {
+  box-shadow: 0 12px 40px rgba(255, 183, 3, 0.55);
 }
 
 figure.soundtrack audio {
-    width: 100%;
-    outline: none;
-    margin-bottom: 8px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  outline: none;
 }
 
 figure.soundtrack figcaption {
-    font-style: italic;
+  margin-top: 12px;
+  font-style: italic;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Aside destacado */
+aside {
+  background: #f9f9f9;
+  border-left: 6px solid #fca311;
+  padding: 18px 20px;
+  margin: 40px 0;
+  font-style: italic;
+  color: #555;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    padding: 20px 18px;
+    margin: 20px 12px;
+  }
+
+  article {
+    padding: 20px 16px;
+    margin-bottom: 36px;
+  }
+
+  article h2 {
+    font-size: 24px;
+    padding-left: 12px;
+    border-left-width: 5px;
+    margin-bottom: 14px;
+  }
+
+  article p {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  main article {
+    flex-direction: column;
+  }
+
+  main article img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 14px;
+  }
+
+  figure.soundtrack {
+    max-width: 100%;
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  figure.soundtrack audio {
+    width: 100%;
+  }
+
+  figure.soundtrack figcaption {
+    font-size: 13px;
+  }
+
+  aside {
+    margin: 30px 0;
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 18px 14px;
+    margin: 15px 10px;
+  }
+
+  article {
+    padding: 16px 14px;
+    margin-bottom: 28px;
+  }
+
+  article h2 {
+    font-size: 20px;
+    padding-left: 10px;
+    border-left-width: 4px;
+    margin-bottom: 12px;
+  }
+
+  article p {
     font-size: 14px;
-    font-weight: 600;
-    color: #fca311;
+    margin-bottom: 14px;
+  }
+
+  main article img {
+    margin-bottom: 16px;
+  }
+
+  figure.soundtrack {
+    padding: 16px;
+  }
+
+  figure.soundtrack figcaption {
+    font-size: 12px;
+  }
+
+  aside {
+    padding: 14px 16px;
+    font-size: 14px;
+    margin: 25px 0;
+  }
 }
