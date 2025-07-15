@@ -1,103 +1,213 @@
+/* Reset y base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body,
-html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    background-color: #f9f9f9;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-header,
-footer {
-    flex-shrink: 0;
+body {
+      height: 100%;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Contenedor principal */
 main {
-    flex: 1 0 auto;
-    max-width: 700px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 40px 30px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
 }
 
-h2 {
-    color: #fca311;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: 600;
+/* Artículos */
+article {
+  margin-bottom: 48px;
+  padding: 24px;
+  border-radius: 14px;
+  background: #fdfdfd;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
 }
 
-label {
-    margin-bottom: 6px;
-    font-weight: bold;
-    color: #555;
+article h2 {
+  font-family: 'Georgia', serif;
+  font-size: 26px;
+  color: #34495e;
+  border-left: 6px solid #ffb703;
+  padding-left: 14px;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1.5px solid #ccc;
-    border-radius: 5px;
+article p {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+/* Listas dentro de artículos */
+article ul {
+  margin-left: 22px;
+  list-style-type: disc;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+/* Formularios en contacto */
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 24px;
+  background-color: #fff;
+  resize: vertical;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  border-color: #ffb703;
+  box-shadow: 0 0 0 3px rgba(255, 183, 3, 0.25);
+  outline: none;
+}
+
+form button {
+  background: linear-gradient(45deg, #fca311, #ffb703);
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(252, 163, 17, 0.5);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover,
+form button:focus {
+  background: linear-gradient(45deg, #e6a600, #fca311);
+  box-shadow: 0 10px 26px rgba(230, 166, 0, 0.7);
+  transform: translateY(-3px);
+}
+
+/* Enlaces dentro de artículos */
+article a {
+  color: #ffb703;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+article a:hover,
+article a:focus {
+  color: #e6a600;
+}
+
+/* Aside especial */
+aside {
+  background: #fef9ec;
+  border-left: 6px solid #fca311;
+  padding: 20px 24px;
+  margin: 40px 0;
+  font-style: italic;
+  color: #555;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Botones simples para navegación interna */
+div.botonera {
+  text-align: center;
+  margin: 30px 0;
+}
+
+div.botonera a {
+  text-decoration: none;
+  background: linear-gradient(45deg, #fca311, #ffb703);
+  color: #111;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-right: 12px;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+div.botonera a:last-child {
+  margin-right: 0;
+}
+
+div.botonera a:hover,
+div.botonera a:focus {
+  background: linear-gradient(45deg, #e6a600, #fca311);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+    margin: 20px 15px;
+  }
+
+  article h2 {
+    font-size: 22px;
+    padding-left: 12px;
+    border-left-width: 4px;
+  }
+
+  article p, article ul {
+    font-size: 15px;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    font-size: 15px;
+  }
+
+  form button {
     font-size: 16px;
-    font-family: inherit;
-    transition: border-color 0.3s ease;
-}
+    padding: 12px 24px;
+  }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    border-color: #fca311;
-    outline: none;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-button {
-    padding: 12px;
-    background-color: #fca311;
-    color: white;
-    font-weight: 700;
+  div.botonera a {
+    padding: 10px 20px;
     font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #d99300;
-}
-
-main>article:last-child {
-    margin-top: 40px;
-    text-align: center;
-    color: #666;
-    font-size: 18px;
-    font-weight: 500;
+  }
 }
